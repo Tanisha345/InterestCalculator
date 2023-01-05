@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:fitsSystemWindows="true"
+    android:background="@color/black">
+
+    <ImageView
+        android:id="@+id/iconamt"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="36dp"
+        app:layout_constraintEnd_toEndOf="@+id/maintitle"
+        app:layout_constraintHorizontal_bias="0.133"
+        app:layout_constraintStart_toStartOf="@+id/maintitle"
+        app:layout_constraintTop_toBottomOf="@+id/maintitle"
+        app:srcCompat="@drawable/amt" />
+
+    <EditText
+        android:id="@+id/enteramt"
+        android:layout_width="147dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/imput_bg"
+        android:fontFamily="@font/lexend"
+        android:gravity="center"
+        android:hint="Enter Amount"
+        android:inputType="numberDecimal"
+        android:textColor="@color/white"
+        android:textColorHint="#B7FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/iconamt"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="@+id/iconamt"
+        app:layout_constraintTop_toBottomOf="@+id/iconamt" />
+
+    <ImageView
+        android:id="@+id/iconroi"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:layout_constraintBottom_toBottomOf="@+id/iconamt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.612"
+        app:layout_constraintStart_toEndOf="@+id/iconamt"
+        app:layout_constraintTop_toTopOf="@+id/iconamt"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/rateofinterest" />
+
+    <EditText
+        android:id="@+id/enterroi"
+        android:layout_width="147dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/imput_bg"
+        android:hint="Enter rate "
+        android:textColorHint="#B7FFFFFF"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:fontFamily="@font/lexend"
+        android:textColor="@color/white"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/enteramt"
+        app:layout_constraintTop_toBottomOf="@+id/iconroi" />
+
+    <ImageView
+        android:id="@+id/timeicon"
+        android:layout_width="61dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/enteramt"
+        app:layout_constraintHorizontal_bias="0.266"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/enteramt"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/time" />
+
+    <EditText
+        android:id="@+id/tyminyear"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/imput_bg"
+        android:fontFamily="@font/lexend"
+        android:gravity="center"
+        android:hint="Enter duration (in years)"
+        android:inputType="number"
+        android:textColor="@color/white"
+
+        android:textColorHint="#B7FFFFFF"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.91"
+        app:layout_constraintStart_toEndOf="@+id/timeicon"
+        app:layout_constraintTop_toBottomOf="@+id/enterroi"
+        app:layout_constraintVertical_bias="0.07"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/Calculate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:fontFamily="@font/lexend"
+        android:text="Calculate"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tyminyear"
+        app:layout_constraintVertical_bias="0.092" />
+
+    <TextView
+        android:id="@+id/maintitle"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Interest Calculator"
+        android:textColor="@color/white"
+        android:gravity="center_vertical"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/lexend"
+        android:drawableLeft="@drawable/ic_baseline_arrow_back_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/si"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/lexend"
+        android:text="Simple Interest"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+
+        app:layout_constraintEnd_toEndOf="@+id/Calculate"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/Calculate"
+        app:layout_constraintTop_toBottomOf="@+id/Calculate" />
+
+    <TextView
+        android:id="@+id/ci"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="136dp"
+        android:fontFamily="@font/lexend"
+        android:text="Compund Interest"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+
+        app:layout_constraintEnd_toEndOf="@+id/Calculate"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/Calculate"
+        app:layout_constraintTop_toBottomOf="@+id/Calculate" />
+
+    <TextView
+        android:id="@+id/anssi"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:background="@drawable/imput_bg"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:fontFamily="@font/lexend"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/si"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="@+id/si"
+        app:layout_constraintTop_toBottomOf="@+id/si"
+        app:layout_constraintVertical_bias="0.049" />
+
+    <TextView
+        android:id="@+id/ansci"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:background="@drawable/imput_bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/si"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:fontFamily="@font/lexend"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="@+id/si"
+        app:layout_constraintTop_toBottomOf="@+id/si"
+        app:layout_constraintVertical_bias="0.448" />
+
+    <TextView
+        android:id="@+id/ansamt"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:background="@drawable/imput_bg"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:fontFamily="@font/lexend"
+        app:layout_constraintBottom_toBottomOf="@+id/anssi"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.531"
+        app:layout_constraintStart_toEndOf="@+id/anssi"
+        app:layout_constraintTop_toBottomOf="@+id/si"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/amunt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/lexend"
+        android:text="Amount"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+
+        app:layout_constraintBottom_toBottomOf="@+id/si"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.464"
+        app:layout_constraintStart_toEndOf="@+id/si"
+        app:layout_constraintTop_toTopOf="@+id/si" />
+
+    <TextView
+        android:id="@+id/amunt2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/lexend"
+        android:text="Amount"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/ci"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.357"
+        app:layout_constraintStart_toEndOf="@+id/ci"
+        app:layout_constraintTop_toTopOf="@+id/ci"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/ansamt2"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.531"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:fontFamily="@font/lexend"
+        app:layout_constraintStart_toEndOf="@+id/ansci"
+        app:layout_constraintTop_toBottomOf="@+id/amunt2"
+        app:layout_constraintVertical_bias="0.083"
+        android:background="@drawable/imput_bg"/>
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/lexend"
+        android:text="per month"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/iconroi"
+        app:layout_constraintTop_toTopOf="@+id/iconroi" />
+
+    <EditText
+        android:id="@+id/durationinmonths"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/imput_bg"
+        android:fontFamily="@font/lexend"
+        android:gravity="center"
+        android:hint="Enter duration (in months)"
+        android:inputType="number"
+        android:textColor="@color/white"
+        android:textColorHint="#B7FFFFFF"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toTopOf="@+id/Calculate"
+        app:layout_constraintEnd_toEndOf="@+id/tyminyear"
+        app:layout_constraintHorizontal_bias="0.558"
+        app:layout_constraintStart_toStartOf="@+id/tyminyear"
+        app:layout_constraintTop_toBottomOf="@+id/tyminyear"
+        app:layout_constraintVertical_bias="0.13"
+        tools:ignore="TouchTargetSizeCheck" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
